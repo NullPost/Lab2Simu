@@ -1,16 +1,24 @@
 #!/bin/bash
+#Script creado por Mario Guerra
+#Pregunar por nombre del archivo
 echo "Nombre de Archivo:"
 read nombre
 if [ $nombre -z ]
 then
+	#si no se escribio nada no se crea archivo
 	echo "No se pudo crear archivo sin nombre"
 else
 	if [ ${nombre:(-2)} == ".c" ]
 	then
+		#Si el usuario ternimo el nombre de su codigo con .c es ignorado
 		echo "No es necesario terminar con .c"
 	else
+		#Se utiliza lo pueso por el usuario para modificar el texto al
+		#inicio del documento
 		touch $nombre.c
 		x=$(hostname)
+		#gcc -version tiene mucha informacion entonces se crea un
+		#documento de texto con el proposio de usar la primera linea
 		touch versiongcc.txt
 		echo "$(gcc --version)" > versiongcc.txt
 		echo "
@@ -28,5 +36,6 @@ Salida:
 //numerar los pasos de pseudocodigo
 		" > $nombre.c
 		rm versiongcc.txt
+		vim $nombre.c
 	fi
 fi
