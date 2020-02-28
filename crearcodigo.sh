@@ -15,6 +15,12 @@ else
 	else
 		#Se utiliza lo pueso por el usuario para modificar el texto al
 		#inicio del documento
+		echo "Resumen:"
+	        read resumen
+		echo "Entradas:"
+		read entrada
+		echo "Salidas:"
+		read salida	
 		touch $nombre.c
 		x=$(hostname)
 		#gcc -version tiene mucha informacion entonces se crea un
@@ -26,9 +32,9 @@ else
 Compilador: $(head -1 versiongcc.txt)
 Compilado: gcc $nombre.c -o $nombre
 Fecha: $(date)
-Resumen:
-Entrada:
-Salida:
+Resumen: $resumen
+Entrada: $entrada
+Salida:  $salida
 */
 
 //librerias
