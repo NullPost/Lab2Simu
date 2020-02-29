@@ -24,7 +24,7 @@ else
 		touch $nombre.c
 		x=$(hostname)
 		#gcc -version tiene mucha informacion entonces se crea un
-		#documento de texto con el proposio de usar la primera linea
+		#documento de texto con el proposito de usar la primera linea
 		touch versiongcc.txt
 		echo "$(gcc --version)" > versiongcc.txt
 		echo "
